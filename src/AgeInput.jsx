@@ -86,13 +86,61 @@ function AgeInput() {
 
     function calculateAge() {
         const currentDate = dayjs();
+
         const birthDate = dayjs(`${day}-${month}-${year}`, 'DD-MM-YYYY');
 
         const years = currentDate.diff(birthDate, 'year');
 
-        const monthDiff = currentDate.month() < month ? currentDate.month() - month + 12 : currentDate.month() - month;
+        let monthDiff;
+        let dayDiff = currentDate.date() - birthDate.date();
 
-        const dayDiff = currentDate.date() < day ? currentDate.date() - day + 31 : currentDate.date() - day;
+        //Month calculation
+        //Add month cycle if birth month is ahead of current month
+        if (currentDate.month() < birthDate.month()) {
+            monthDiff = (currentDate.month() - birthDate.month() + 12) - 1 //Subtracting the difference in birthdate month;
+
+        } else {
+            monthDiff = currentDate.month() - birthDate.month();
+
+        }
+
+        //Day calculation
+        if (dayDiff < 0) {
+
+            dayDiff += 31;
+        }
+
+        //Check if current date is less or equal to birth and day difference is zero or birth date is less then we add 1 month
+        const addMonthDiff = birthDate.date() < currentDate.date() || currentDate.date() <= birthDate.date() && dayDiff == 0;
+
+        if (addMonthDiff) {
+            //Only adding 1 month if month difference is not 0 and current month is less than birth month
+            if (monthDiff !== 0 && currentDate.month() < birthDate.month()) {
+                monthDiff += 1;
+
+            }
+
+        }
+        else {
+            // subtracting month difference only if current month is less or equal to birth month
+            if (currentDate.month() <= birthDate.month()) {
+                monthDiff = (currentDate.month() - birthDate.month() + 12) - 1
+
+            }
+            else {
+                monthDiff -= 1;
+            }
+
+        }
+
+        console.log(`
+             birth month: ${birthDate.month()}
+             current month: ${currentDate.month()}
+             months Diff: ${monthDiff}
+             current Date: ${currentDate.date()}
+             birth date: ${birthDate.date()}
+         `);
+
 
         //Context states to render the results
         setYears(years);
