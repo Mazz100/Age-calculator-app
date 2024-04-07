@@ -53,7 +53,7 @@ function AgeInput() {
         }
 
         //Check for date ranges
-        if (day > 31 || day < 1 || month < 1 || month > 12 || year < 1900 || year > currentYear) {
+        if (day > 31 || day < 1 || month < 1 || month > 12 || year > currentYear) {
             setInvalidRangeError(true);
             setEmptyFieldError(false);
             setInvalidDate(false);
