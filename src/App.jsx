@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-      <div className='min-h-screen flex flex-col items-center justify-center '>
+      <div className='min-h-screen flex flex-col items-center justify-center'>
         <main className='flex flex-col items-center justify-center flex-1'>
           <div className='bg-white p-5 rounded-xl rounded-br-5xl'>
             <yearContext.Provider value={[years, setYears]}>
@@ -27,10 +27,10 @@ function App() {
           </div>
         </main >
 
-        <footer className='text-sm text-balance w-full text-center bg-gray-200'>
+        <footer className='text-sm text-balance w-full text-center bg-gray-100'>
           <p className='p-2 rounded-t-md'>
-            Challenge by <a className='text-blue-500 font-bold hover:underline hover:animate-pulse' href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-            Coded by <a className='text-blue-500 font-bold hover:underline hover:animate-pulse' href="#">Mazen Hassan</a>.
+            Challenge by <a className='text-blue-700 font-bold hover:underline hover:animate-pulse' href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+            Coded by <a className='text-blue-700 font-bold hover:underline hover:animate-pulse' href="#">Mazen Hassan</a>.
           </p>
         </footer>
       </div >

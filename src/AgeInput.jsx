@@ -133,14 +133,6 @@ function AgeInput() {
 
         }
 
-        console.log(`
-             birth month: ${birthDate.month()}
-             current month: ${currentDate.month()}
-             months Diff: ${monthDiff}
-             current Date: ${currentDate.date()}
-             birth date: ${birthDate.date()}
-         `);
-
 
         //Context states to render the results
         setYears(years);
@@ -154,6 +146,7 @@ function AgeInput() {
         <form>
             <div className="flex items-center justify-center gap-6 md:gap-4 md:justify-start">
                 <div className=" flex flex-col items-start justify-center">
+                    <h1></h1>
                     <label className=" text-xxs mb-1 uppercase font-extrabold opacity-65"
                         style={errorStyle}
                         htmlFor="day">
