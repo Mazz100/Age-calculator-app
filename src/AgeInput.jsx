@@ -146,22 +146,22 @@ function AgeInput() {
         <form>
             <div className="flex items-center justify-center gap-6 md:gap-4 md:justify-start">
                 <div className=" flex flex-col items-start justify-center">
-                    <h1></h1>
+                    <h1 className="hidden">-</h1>
                     <label className=" text-xxs mb-1 uppercase font-extrabold opacity-65"
                         style={errorStyle}
                         htmlFor="day">
                         Day
                     </label>
-                    <input className="w-16 md:w-20 p-2 md:p-1 md:px-2 border border-text-date-text rounded-md font-bold"
+                    <input className="w-16 md:w-24 md:h-10 p-2 md:p-1 md:px-2 border border-text-date-text rounded-md md:text-2xl font-bold hover:border-primary-purple transition-colors focus:outline-none focus:border focus:border-primary-purple"
                         style={errorStyle}
                         type="text"
                         value={day} onChange={handleDayChange}
                         id="day"
                         placeholder="DD" />
 
-                    {emptyFieldError && <small className="text-error text-mini mt-1 italic">This field is required</small>}
-                    {invalidRangeError && <small className="text-error text-mini mt-1 italic">Must be a valid day</small>}
-                    {invalidDate && <small className="text-error text-mini mt-1 italic">Must be a valid date</small>}
+                    {emptyFieldError && <small className="text-error text-xxs mt-1 italic">This field is required</small>}
+                    {invalidRangeError && <small className="text-error text-xxs mt-1 italic">Must be a valid day</small>}
+                    {invalidDate && <small className="text-error text-xxs mt-1 italic">Must be a valid date</small>}
                 </div>
 
                 <div className="flex flex-col items-start justify-center">
@@ -171,15 +171,16 @@ function AgeInput() {
                         Month
                     </label>
 
-                    <input className="w-16 md:w-20 p-2 md:p-1 md:px-2 border border-text-date-text rounded-md font-bold"
+                    <input
+                        className="w-16 md:w-24 md:h-10 p-2 md:p-1 md:px-2 border border-text-date-text rounded-md md:text-2xl font-bold hover:border-primary-purple transition-colors focus:outline-none focus:border focus:border-primary-purple"
                         style={errorStyle}
                         type="text"
                         value={month} onChange={handleMonthChange}
                         id="month"
                         placeholder="MM" />
 
-                    {emptyFieldError && <small className="text-error text-mini mt-1 italic">This field is required</small>}
-                    {invalidRangeError && <small className="text-error text-mini mt-1 italic">Must be a valid month</small>}
+                    {emptyFieldError && <small className="text-error text-xxs mt-1 italic">This field is required</small>}
+                    {invalidRangeError && <small className="text-error text-xxs mt-1 italic">Must be a valid month</small>}
                 </div>
 
                 <div className="flex flex-col items-start justify-center">
@@ -189,15 +190,15 @@ function AgeInput() {
                         Year
                     </label>
 
-                    <input className="w-16 md:w-20 p-2 md:p-1 md:px-2 border border-text-date-text rounded-md font-bold"
+                    <input className="w-16 md:w-24 md:h-10 p-2 md:p-1 md:px-2 border border-text-date-text rounded-md md:text-2xl font-bold hover:border-primary-purple transition-colors focus:outline-none focus:border focus:border-primary-purple"
                         style={errorStyle}
                         type="text"
                         value={year} onChange={handleYearChange}
                         id="year"
                         placeholder="YYYY" />
 
-                    {emptyFieldError && <small className="text-error text-mini mt-1 italic">This field is required</small>}
-                    {invalidRangeError && <small className="text-error text-mini mt-1 italic">Must be in the past</small>}
+                    {emptyFieldError && <small className="text-error text-xxs mt-1 italic">This field is required</small>}
+                    {invalidRangeError && <small className="text-error text-xxs mt-1 italic">Must be in the past</small>}
                 </div>
             </div>
 

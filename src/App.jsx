@@ -13,9 +13,8 @@ function App() {
 
   return (
     <>
-      <div className='min-h-screen flex flex-col items-center justify-center'>
-        <main className='flex flex-col items-center justify-center flex-1'>
-          <div className='bg-white p-5 rounded-xl rounded-br-5xl'>
+        <main className='flex flex-col justify-center flex-1 w-full max-w-[23rem] md:max-w-[34rem]'>
+          <div className='bg-white p-5 md:p-8 rounded-xl rounded-br-5xl shadow-lg'>
             <yearContext.Provider value={[years, setYears]}>
               <monthContext.Provider value={[months, setMonths]}>
                 <dayContext.Provider value={[days, setDays]}>
@@ -33,7 +32,6 @@ function App() {
             Coded by <a className='text-blue-700 font-bold hover:underline hover:animate-pulse' href="#">Mazen Hassan</a>.
           </p>
         </footer>
-      </div >
 
     </>
   )
