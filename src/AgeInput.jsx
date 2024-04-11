@@ -146,7 +146,7 @@ function AgeInput() {
         <form>
             <div className="flex items-center justify-center gap-6 md:gap-4 md:justify-start">
                 <div className=" flex flex-col items-start justify-center">
-                    <h1 className="hidden">-</h1>
+                    <h1 className="opacity-0 absolute">-</h1>
                     <label className=" text-xxs mb-1 uppercase font-extrabold opacity-65"
                         style={errorStyle}
                         htmlFor="day">
